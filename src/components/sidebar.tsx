@@ -16,6 +16,7 @@ import { logout, getCurrentUser } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import type { User } from "@/lib/types";
+import Image from "next/image";
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -84,13 +85,17 @@ export function Sidebar() {
         <div className="flex h-16 items-center justify-between border-b border-border px-3">
           {!isCollapsed && (
             <div className="flex items-center gap-3 px-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <Target className="h-6 w-6 text-white" />
+              <div className="flex h-10 w-10 items-center justify-center ">
+                <Image
+                  src="/logo.png"
+                  alt="Logo"
+                  width={64}
+                  height={64}
+                  className="rounded-full"
+                />
               </div>
               <div>
-                <h1 className="text-lg font-bold text-foreground">
-                  3 Corações
-                </h1>
+                <h1 className="text-lg font-bold text-foreground">Suiris</h1>
                 <p className="text-xs text-muted-foreground">Gestão de Metas</p>
               </div>
             </div>

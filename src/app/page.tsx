@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { Target } from "lucide-react";
 import { login, initializeUsers, getCurrentUser } from "@/lib/auth";
 import { initializeMetas } from "@/lib/metas";
+import Image from "next/image";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -46,12 +47,19 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-orange-50 to-orange-100 p-4">
       <Card className="w-full max-w-md p-8">
         <div className="mb-8 text-center">
-          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary">
-            <Target className="h-10 w-10 text-white" />
+          <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center ">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={64}
+              height={64}
+              className="rounded-full"
+            />
+            {/* <Target className="h-10 w-10 text-white" /> */}
           </div>
-          <h1 className="text-3xl font-bold text-foreground">3 Corações</h1>
+          <h1 className="text-3xl font-bold text-foreground">Suiris</h1>
           <p className="mt-2 text-muted-foreground">
-            Suiris - Plataforma de Gestão de Metas
+            Plataforma de Gestão de Metas
           </p>
         </div>
 
