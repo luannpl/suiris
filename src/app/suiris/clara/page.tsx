@@ -109,7 +109,7 @@ export default function ChatbotVendas() {
       <div className="bg-white border-b border-slate-200 px-4 md:px-6 py-3 md:py-4 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="relative flex-shrink-0">
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg ml-8 sm:ml-0">
               <Bot className="text-white" size={20} />
             </div>
             <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
@@ -256,7 +256,7 @@ export default function ChatbotVendas() {
       {/* Input */}
       <div className="bg-white border-t border-slate-200 px-3 md:px-6 py-3 md:py-4 shadow-lg">
         <div className="flex items-center gap-3">
-          <div className="flex-1 bg-slate-100 rounded-2xl border-2 border-slate-200 focus-within:border-orange-400 flex items-center">
+          <div className="flex-1 bg-slate-100 rounded-br-lg rounded-tl-lg border-2 border-slate-200 focus-within:border-orange-400 flex items-center">
             <textarea
               value={inputTexto}
               onChange={(e) => setInputTexto(e.target.value)}

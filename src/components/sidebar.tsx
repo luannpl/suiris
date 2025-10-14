@@ -12,6 +12,7 @@ import {
   Target,
   Trophy,
   Users,
+  View,
   X,
 } from "lucide-react";
 import Image from "next/image";
@@ -71,6 +72,12 @@ export function Sidebar({
       href: "/suiris/supervisor/alertas",
       icon: AlertCircle,
       label: "Alerta e Ações",
+      show: isSupervisor,
+    },
+    {
+      href: "/suiris/supervisor/monitoramento",
+      icon: View,
+      label: "Monitoramento ",
       show: isSupervisor,
     },
     { href: "/suiris/ranking", icon: Trophy, label: "Ranking", show: true },

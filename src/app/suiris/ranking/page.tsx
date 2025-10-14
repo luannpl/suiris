@@ -57,12 +57,12 @@ export default function RankingPage() {
       {/* <Sidebar /> */}
 
       <main className="flex-1 overflow-y-auto">
-        <div className="p-8">
+        <div className="p-4 sm:p-6 lg:p-8 mt-8 sm:mt-0">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-foreground">
+            <h1 className="text-2xl sm:text-3xl font-bold text-foreground">
               Ranking de Vendedores
             </h1>
-            <p className="mt-2 text-muted-foreground">
+            <p className="mt-1 sm:mt-2 text-sm sm:text-base text-muted-foreground">
               Classificação por metas concluídas
             </p>
           </div>

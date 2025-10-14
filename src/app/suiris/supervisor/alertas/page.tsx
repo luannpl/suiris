@@ -18,6 +18,9 @@ import {
 export default function AlertasDashboard() {
   const [filtroAtivo, setFiltroAtivo] = useState("todos");
   const [searchTerm, setSearchTerm] = useState("");
+  const [alertasAgendados, setAlertasAgendados] = useState<{
+    [key: number]: boolean;
+  }>({});
 
   const alertas = [
     {
@@ -127,6 +130,10 @@ export default function AlertasDashboard() {
     return icons[tipo as keyof typeof icons] || Bell;
   };
 
+  const agendar = (alertaId: number) => {
+    setAlertasAgendados((prev) => ({ ...prev, [alertaId]: true }));
+  };
+
   const alertasFiltrados = alertas.filter((alerta) => {
     const matchFiltro =
       filtroAtivo === "todos" ||
@@ -176,7 +183,7 @@ export default function AlertasDashboard() {
                   <button
                     key={filtro}
                     onClick={() => setFiltroAtivo(filtro)}
-                    className={`px-3 md:px-4 py-2 rounded-lg font-medium text-sm transition-all whitespace-nowrap ${
+                    className={`px-3 md:px-4 py-2 rounded-br-lg rounded-tl-lg font-medium text-sm transition-all whitespace-nowrap ${
                       filtroAtivo === filtro
                         ? "bg-orange-500 text-white"
                         : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -214,6 +221,8 @@ export default function AlertasDashboard() {
                 className={`bg-white rounded-xl border-2 p-4 md:p-6 transition-all hover:shadow-lg ${
                   alerta.lido
                     ? "border-slate-200"
+                    : alertasAgendados[alerta.id]
+                    ? "border-yellow-400 bg-yellow-50/30"
                     : "border-orange-200 bg-orange-50/30"
                 }`}
               >
@@ -306,9 +315,19 @@ export default function AlertasDashboard() {
 
                     {/* Botões de Ação */}
                     <div className="flex flex-col sm:flex-row gap-2 md:gap-3 mt-4">
-                      <button className="flex items-center justify-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-lg font-medium text-sm hover:bg-orange-600 transition-colors">
+                      <button
+                        className={`flex items-center justify-center gap-2 px-4 py-2 rounded-br-lg rounded-tl-lg font-medium text-sm transition-colors ${
+                          alertasAgendados[alerta.id]
+                            ? "bg-yellow-500 text-white hover:bg-yellow-600"
+                            : "bg-orange-500 text-white hover:bg-orange-600"
+                        }`}
+                        disabled={alertasAgendados[alerta.id]}
+                        onClick={() => agendar(alerta.id)}
+                      >
                         <CheckCircle size={18} />
-                        Agendar Reunião
+                        {alertasAgendados[alerta.id]
+                          ? "Vespertina Agendada"
+                          : "Agendar Vespertina"}
                       </button>
                       <button className="flex items-center justify-center gap-2 bg-slate-100 text-slate-700 px-4 py-2 rounded-lg font-medium text-sm hover:bg-slate-200 transition-colors">
                         <X size={18} />
