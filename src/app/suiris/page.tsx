@@ -139,9 +139,7 @@ export default function DashboardPage() {
                 className="cursor-pointer p-6 transition-all hover:shadow-md"
                 onClick={() =>
                   router.push(
-                    isSupervisor
-                      ? "/dashboard/supervisor"
-                      : "/dashboard/vendedor"
+                    isSupervisor ? "/suiris/supervisor" : "/suiris/vendedor"
                   )
                 }
               >
@@ -158,7 +156,7 @@ export default function DashboardPage() {
 
               <Card
                 className="cursor-pointer p-6 transition-all hover:shadow-md"
-                onClick={() => router.push("/dashboard/ranking")}
+                onClick={() => router.push("/suiris/ranking")}
               >
                 <Trophy className="mb-3 h-8 w-8 text-primary" />
                 <h3 className="text-lg font-semibold text-foreground">

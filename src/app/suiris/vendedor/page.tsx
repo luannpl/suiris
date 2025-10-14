@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { Sidebar } from "@/components/sidebar";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { getMetasByVendedor, addMeta, updateMeta } from "@/lib/metas";

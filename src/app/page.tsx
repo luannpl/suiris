@@ -25,7 +25,7 @@ export default function LoginPage() {
     // Redirecionar se já estiver logado
     const user = getCurrentUser();
     if (user) {
-      router.push("/dashboard");
+      router.push("/suiris");
     }
   }, [router]);
 
@@ -35,7 +35,7 @@ export default function LoginPage() {
 
     const user = login(email);
     if (user) {
-      router.push("/dashboard");
+      router.push("/suiris");
     } else {
       setError(
         "Email não encontrado. Tente: joao@3coracoes.com, maria@3coracoes.com ou carlos@3coracoes.com"

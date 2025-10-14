@@ -8,7 +8,7 @@ export function initializeMetas() {
   if (typeof window === "undefined") return;
 
   const stored = localStorage.getItem(METAS_KEY);
-  if (!stored) {
+  if (stored) {
     const defaultMetas: Meta[] = [
       {
         id: "1",
@@ -28,6 +28,18 @@ export function initializeMetas() {
         vendedorName: "Maria Santos",
         titulo: "Novos Clientes",
         descricao: "Captação de novos clientes no setor corporativo",
+        valorMeta: 30000,
+        valorAtual: 30000,
+        data: new Date().toISOString().split("T")[0],
+        status: "concluida",
+        createdAt: new Date().toISOString(),
+      },
+      {
+        id: "3",
+        vendedorId: "3",
+        vendedorName: "Paulo Luan",
+        titulo: "Cappuccino Vendas",
+        descricao: "Meta de vendas do Cappuccino 3 Corações",
         valorMeta: 30000,
         valorAtual: 30000,
         data: new Date().toISOString().split("T")[0],

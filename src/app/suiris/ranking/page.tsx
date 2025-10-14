@@ -83,7 +83,9 @@ export default function RankingPage() {
                 <Card
                   key={vendedor.vendedorId}
                   className={`p-6 transition-all ${
-                    user.id === vendedor.vendedorId ? "ring-2 ring-primary" : ""
+                    user.id === vendedor.vendedorId
+                      ? "bg-gradient-to-br from-orange-50 to-orange-100"
+                      : ""
                   }`}
                 >
                   <div className="flex items-center gap-6">

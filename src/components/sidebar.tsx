@@ -2,7 +2,9 @@ import { Button } from "@/components/ui/button";
 import type { User } from "@/lib/types";
 import { getCurrentUser, logout } from "@/lib/auth";
 import {
+  AlertCircle,
   BarChart3,
+  Bot,
   ChevronLeft,
   Home,
   LogOut,
@@ -46,26 +48,33 @@ export function Sidebar({
   const isSupervisor = user?.role === "supervisor";
 
   const navItems = [
-    { href: "/dashboard", icon: Home, label: "Dashboard", show: true },
+    { href: "/suiris", icon: Home, label: "Dashboard", show: true },
     {
-      href: "/dashboard/vendedor",
+      href: "/suiris/vendedor",
       icon: Target,
       label: "Minhas Metas",
       show: !isSupervisor,
     },
     {
-      href: "/dashboard/vendedor/clientes",
+      href: "/suiris/vendedor/clientes",
       icon: Users,
       label: "Meus Clientes",
       show: !isSupervisor,
     },
     {
-      href: "/dashboard/supervisor",
+      href: "/suiris/supervisor",
       icon: BarChart3,
       label: "Todas as Metas",
       show: isSupervisor,
     },
-    { href: "/dashboard/ranking", icon: Trophy, label: "Ranking", show: true },
+    {
+      href: "/suiris/supervisor/alertas",
+      icon: AlertCircle,
+      label: "Alerta e Ações",
+      show: isSupervisor,
+    },
+    { href: "/suiris/ranking", icon: Trophy, label: "Ranking", show: true },
+    { href: "/suiris/clara", icon: Bot, label: "Clara AI", show: true },
   ];
 
   return (
