@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { Sidebar } from "@/components/sidebar";
 import { Card } from "@/components/ui/card";
 import { Trophy, Medal, Award } from "lucide-react";
 import { getRanking } from "@/lib/metas";
@@ -55,7 +54,7 @@ export default function RankingPage() {
 
   return (
     <div className="flex h-screen bg-background">
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       <main className="flex-1 overflow-y-auto">
         <div className="p-8">

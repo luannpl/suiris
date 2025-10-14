@@ -77,7 +77,7 @@ export default function SupervisorPage() {
 
   return (
     <div className="flex h-screen bg-background">
-      <Sidebar />
+      {/* <Sidebar /> */}
 
       <main className="flex-1 overflow-y-auto">
         <div className="p-8">

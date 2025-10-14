@@ -1,29 +1,38 @@
-"use client";
-
+import { Button } from "@/components/ui/button";
+import type { User } from "@/lib/types";
+import { getCurrentUser, logout } from "@/lib/auth";
 import {
+  BarChart3,
+  ChevronLeft,
   Home,
+  LogOut,
+  Menu,
   Target,
   Trophy,
-  LogOut,
-  BarChart3,
+  Users,
   X,
-  Menu,
-  ChevronLeft,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { logout, getCurrentUser } from "@/lib/auth";
-import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import type { User } from "@/lib/types";
-import Image from "next/image";
 
-export function Sidebar() {
+interface SidebarProps {
+  isCollapsed: boolean;
+  toggleCollapse: () => void;
+  isMobileOpen: boolean;
+  setIsMobileOpen: (isOpen: boolean) => void;
+}
+
+export function Sidebar({
+  isCollapsed,
+  toggleCollapse,
+  isMobileOpen,
+  setIsMobileOpen,
+}: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
   const [user, setUser] = useState<User | null>(null);
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   useEffect(() => {
     setUser(getCurrentUser());
@@ -42,6 +51,12 @@ export function Sidebar() {
       href: "/dashboard/vendedor",
       icon: Target,
       label: "Minhas Metas",
+      show: !isSupervisor,
+    },
+    {
+      href: "/dashboard/vendedor/clientes",
+      icon: Users,
+      label: "Meus Clientes",
       show: !isSupervisor,
     },
     {
@@ -73,7 +88,7 @@ export function Sidebar() {
       <div
         className={`flex flex-col border-r border-border bg-card transition-all duration-300
           ${isCollapsed ? "w-16" : "w-64"}
-          md:relative md:h-screen
+          md:fixed md:h-screen
           ${
             isMobileOpen
               ? "fixed inset-0 z-40 h-screen w-full"
@@ -102,10 +117,8 @@ export function Sidebar() {
           )}
 
           <Button
-            onClick={() =>
-              isMobileOpen
-                ? setIsMobileOpen(false)
-                : setIsCollapsed(!isCollapsed)
+            onClick={
+              isMobileOpen ? () => setIsMobileOpen(false) : toggleCollapse
             }
             variant="ghost"
             size="sm"
@@ -168,7 +181,7 @@ export function Sidebar() {
             }}
             variant="ghost"
             className={`w-full cursor-pointer text-muted-foreground hover:text-foreground ${
-              isCollapsed ? "justify-center px-3" : "justify-start gap-3"
+              isCollapsed ? "justify-center" : "justify-start gap-3"
             }`}
             title={isCollapsed ? "Sair" : undefined}
           >

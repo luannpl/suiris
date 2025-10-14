@@ -19,3 +19,16 @@ export interface Meta {
   status: "pendente" | "em_progresso" | "concluida" | "nao_concluida";
   createdAt: string;
 }
+
+export interface Cliente {
+  id: string;
+  vendedorId: string;
+  nomeRazaoSocial: string;
+  email: string;
+  telefone: string;
+  endereco: string;
+  dataUltimaCompra: string | null;
+  inadimplente: boolean;
+  valorDebitoTotal: number;
+  createdAt: string;
+}
