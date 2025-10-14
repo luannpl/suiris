@@ -15,6 +15,7 @@ import {
 import { getCurrentUser } from "@/lib/auth";
 import { getMetas, getMetasByVendedor } from "@/lib/metas";
 import { User } from "@/lib/types";
+import Link from "next/link";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -75,49 +76,63 @@ export default function DashboardPage() {
 
           {/* Stats Cards */}
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="p-6">
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <Target className="h-6 w-6 text-primary" />
+            <Link
+              href={isSupervisor ? "/suiris/supervisor" : "/suiris/vendedor"}
+            >
+              <Card className="p-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                    <Target className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">
+                      Total de Metas
+                    </p>
+                    <p className="text-2xl font-bold text-foreground">
+                      {stats.totalMetas}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">
-                    Total de Metas
-                  </p>
-                  <p className="text-2xl font-bold text-foreground">
-                    {stats.totalMetas}
-                  </p>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </Link>
 
-            <Card className="p-6">
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-success/10">
-                  <Trophy className="h-6 w-6 text-success" />
+            <Link
+              href={isSupervisor ? "/suiris/supervisor" : "/suiris/vendedor"}
+            >
+              <Card className="p-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-success/10">
+                    <Trophy className="h-6 w-6 text-success" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Concluídas</p>
+                    <p className="text-2xl font-bold text-foreground">
+                      {stats.metasConcluidas}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Concluídas</p>
-                  <p className="text-2xl font-bold text-foreground">
-                    {stats.metasConcluidas}
-                  </p>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </Link>
 
-            <Card className="p-6">
-              <div className="flex items-center gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-warning/10">
-                  <TrendingUp className="h-6 w-6 text-warning" />
+            <Link
+              href={isSupervisor ? "/suiris/supervisor" : "/suiris/vendedor"}
+            >
+              <Card className="p-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-warning/10">
+                    <TrendingUp className="h-6 w-6 text-warning" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">
+                      Em Progresso
+                    </p>
+                    <p className="text-2xl font-bold text-foreground">
+                      {stats.metasEmProgresso}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Em Progresso</p>
-                  <p className="text-2xl font-bold text-foreground">
-                    {stats.metasEmProgresso}
-                  </p>
-                </div>
-              </div>
-            </Card>
+              </Card>
+            </Link>
 
             <Card className="p-6">
               <div className="flex items-center gap-4">

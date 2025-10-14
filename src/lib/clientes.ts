@@ -45,7 +45,7 @@ const MOCK_CLIENTES: Cliente[] = [
     email: "padariabairro@gmail.com",
     telefone: "(85) 96666-6666",
     endereco: "Rua Juvenal Galeno, 321 - Fortaleza, CE",
-    dataUltimaCompra: null,
+    dataUltimaCompra: "2024-10-10",
     inadimplente: true,
     valorDebitoTotal: 1200.0,
     createdAt: "2024-04-20",

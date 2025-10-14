@@ -37,6 +37,10 @@ export default function VendedorPage() {
     setMetas(userMetas);
   };
 
+  const viewMeta = (meta: Meta) => {
+    router.push(`/suiris/vendedor/meta/${meta.id}`);
+  };
+
   const handleAddMeta = (data: {
     titulo: string;
     descricao: string;
@@ -66,11 +70,6 @@ export default function VendedorPage() {
     loadMetas(user.id);
   };
 
-  const handleEditMeta = (meta: Meta) => {
-    setEditingMeta(meta);
-    setDialogOpen(true);
-  };
-
   if (!user) return null;
 
   return (
@@ -85,7 +84,7 @@ export default function VendedorPage() {
                 Minhas Metas
               </h1>
               <p className="mt-1 sm:mt-2 text-sm sm:text-base text-muted-foreground">
-                Cadastre e acompanhe suas metas diárias
+                Clique no card para acompanhar sua meta
               </p>
             </div>
             <Button
@@ -124,7 +123,7 @@ export default function VendedorPage() {
                 <MetaCard
                   key={meta.id}
                   meta={meta}
-                  onClick={() => handleEditMeta(meta)}
+                  onClick={() => viewMeta(meta)}
                 />
               ))}
             </div>
