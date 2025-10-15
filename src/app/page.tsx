@@ -19,9 +19,6 @@ export default function LoginPage() {
   const router = useRouter();
 
   useEffect(() => {
-    initializeUsers();
-    initializeMetas();
-
     // Redirecionar se já estiver logado
     const user = getCurrentUser();
     if (user) {
@@ -32,6 +29,8 @@ export default function LoginPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    initializeUsers();
+    initializeMetas();
 
     const user = login(email);
     if (user) {
