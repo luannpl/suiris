@@ -132,6 +132,13 @@ export default function AlertasDashboard() {
 
   const agendar = (alertaId: number) => {
     setAlertasAgendados((prev) => ({ ...prev, [alertaId]: true }));
+    const numero = "5585921644075"; // Exemplo: DDI + DDD + número
+    const mensagem = encodeURIComponent(
+      "Olá! Você foi chamado para participar da reunião vespertina. "
+    );
+
+    // Abre o WhatsApp
+    window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
   };
 
   const alertasFiltrados = alertas.filter((alerta) => {
@@ -316,7 +323,7 @@ export default function AlertasDashboard() {
                     {/* Botões de Ação */}
                     <div className="flex flex-col sm:flex-row gap-2 md:gap-3 mt-4">
                       <button
-                        className={`flex items-center justify-center gap-2 px-4 py-2 rounded-br-lg rounded-tl-lg font-medium text-sm transition-colors ${
+                        className={`flex items-center justify-center gap-2 px-4 py-2 rounded-br-lg rounded-tl-lg font-medium text-sm transition-colors cursor-pointer ${
                           alertasAgendados[alerta.id]
                             ? "bg-yellow-500 text-white hover:bg-yellow-600"
                             : "bg-orange-500 text-white hover:bg-orange-600"

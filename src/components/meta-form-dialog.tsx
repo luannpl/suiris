@@ -99,13 +99,13 @@ export function MetaFormDialog({
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="valorMeta">Valor da Meta (R$)</Label>
+              <Label htmlFor="valorMeta">Meta de Clientes</Label>
               <Input
                 id="valorMeta"
                 type="number"
                 value={valorMeta}
                 onChange={(e) => setValorMeta(e.target.value)}
-                placeholder="50000"
+                placeholder="20"
                 min="0"
                 step="0.01"
                 required
@@ -113,15 +113,15 @@ export function MetaFormDialog({
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="valorAtual">Valor Atual (R$)</Label>
+              <Label htmlFor="valorAtual">Total Visitados</Label>
               <Input
                 id="valorAtual"
                 type="number"
                 value={valorAtual}
                 onChange={(e) => setValorAtual(e.target.value)}
-                placeholder="0"
-                min="0"
-                step="0.01"
+                placeholder="1"
+                min="1"
+                // step="0.01"
                 required
               />
             </div>

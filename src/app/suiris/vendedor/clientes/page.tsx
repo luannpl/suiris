@@ -154,7 +154,7 @@ export default function ClientesVendedorPage() {
               setEditingCliente(undefined);
               setDialogOpen(true);
             }}
-            className="bg-primary hover:bg-primary-dark w-full sm:w-auto"
+            className="bg-primary hover:bg-primary-dark w-full sm:w-auto cursor-pointer"
           >
             <Plus className="mr-2 h-4 w-4" />
             Novo Cliente
@@ -231,7 +231,7 @@ export default function ClientesVendedorPage() {
                   placeholder="Buscar por nome..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10 w-full"
+                  className="pl-10 w-full "
                 />
               </div>
               <Select value={statusFilter} onValueChange={setStatusFilter}>

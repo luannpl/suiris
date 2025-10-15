@@ -177,42 +177,56 @@ export default function DashboardPage() {
                     : "Cadastre e acompanhe suas metas diárias"}
                 </p>
               </Card>
+              <Card
+                className="cursor-pointer p-6 transition-all hover:shadow-primary hover:shadow-md"
+                onClick={() =>
+                  router.push(
+                    isSupervisor
+                      ? "/suiris/supervisor/monitoramento"
+                      : "/suiris/vendedor/clientes"
+                  )
+                }
+              >
+                <div className="flex items-center gap-2">
+                  <Users className=" h-8 w-8 text-primary" />
+                  <h3 className="text-lg font-semibold text-foreground">
+                    {isSupervisor ? "Monitoramento" : "Meus Clientes"}
+                  </h3>
+                </div>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {isSupervisor
+                    ? "Monitore atividades e desempenho da equipe"
+                    : "Cadastre e acompanhe seus clientes"}
+                </p>
+              </Card>
 
               <Card
                 className="cursor-pointer p-6 transition-all hover:shadow-primary hover:shadow-md"
                 onClick={() =>
                   router.push(
-                    isSupervisor ? "/suiris/supervisor" : "/suiris/vendedor"
+                    isSupervisor
+                      ? "/suiris/supervisor/alertas"
+                      : "/suiris/ranking"
                   )
                 }
               >
                 <div className="flex items-center gap-2">
-                  <AlertCircle className=" h-8 w-8 text-primary" />
+                  {isSupervisor ? (
+                    <AlertCircle className=" h-8 w-8 text-primary" />
+                  ) : (
+                    <Trophy className=" h-8 w-8 text-primary" />
+                  )}
                   <h3 className="text-lg font-semibold text-foreground">
-                    {isSupervisor ? "Alertas e Ações" : "Minhas Metas"}
+                    {isSupervisor ? "Alertas e Ações" : "Ranking"}
                   </h3>
                 </div>
                 <p className="mt-1 text-sm text-muted-foreground">
                   {isSupervisor
                     ? "Gerencie ações para a equipe"
-                    : "Cadastre e acompanhe suas metas diárias"}
+                    : "Veja o ranking dos melhores vendedores"}
                 </p>
               </Card>
 
-              <Card
-                className="cursor-pointer p-6 transition-all hover:shadow-primary hover:shadow-md"
-                onClick={() => router.push("/suiris/ranking")}
-              >
-                <div className="flex items-center gap-2">
-                  <Trophy className=" h-8 w-8 text-primary" />
-                  <h3 className="text-lg font-semibold text-foreground">
-                    Ranking
-                  </h3>
-                </div>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Veja o ranking dos vendedores por metas batidas
-                </p>
-              </Card>
               <Card
                 className="cursor-pointer p-6 transition-all hover:shadow-primary hover:shadow-md"
                 onClick={() => router.push("/suiris/clara")}

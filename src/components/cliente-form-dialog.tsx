@@ -212,7 +212,10 @@ export function ClienteFormDialog({
             >
               Cancelar
             </Button>
-            <Button type="submit" className="bg-primary hover:bg-primary-dark">
+            <Button
+              type="submit"
+              className="bg-primary hover:bg-primary-dark cursor-pointer"
+            >
               {isEdit ? "Salvar Alterações" : "Criar Cliente"}
             </Button>
           </div>

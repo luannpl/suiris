@@ -4,7 +4,7 @@ import { Cliente } from "./types";
 const MOCK_CLIENTES: Cliente[] = [
   {
     id: "1",
-    vendedorId: "1",
+    vendedorId: "5",
     nomeRazaoSocial: "João Silva & Cia Ltda",
     email: "joao@silva.com",
     telefone: "(85) 99999-9999",
@@ -16,7 +16,7 @@ const MOCK_CLIENTES: Cliente[] = [
   },
   {
     id: "2",
-    vendedorId: "1",
+    vendedorId: "5",
     nomeRazaoSocial: "Maria Santos Comércio",
     email: "maria.santos@email.com",
     telefone: "(85) 98888-8888",
@@ -40,7 +40,7 @@ const MOCK_CLIENTES: Cliente[] = [
   },
   {
     id: "4",
-    vendedorId: "1",
+    vendedorId: "5",
     nomeRazaoSocial: "Padaria do Bairro",
     email: "padariabairro@gmail.com",
     telefone: "(85) 96666-6666",
@@ -64,7 +64,7 @@ const MOCK_CLIENTES: Cliente[] = [
   },
   {
     id: "6",
-    vendedorId: "1",
+    vendedorId: "5",
     nomeRazaoSocial: "Supermercado São João",
     email: "compras@supermercadosaojoao.com.br",
     telefone: "(85) 94444-4444",
@@ -88,7 +88,7 @@ const MOCK_CLIENTES: Cliente[] = [
   },
   {
     id: "8",
-    vendedorId: "1",
+    vendedorId: "5",
     nomeRazaoSocial: "Hotel Vista Bela",
     email: "reservas@hotelvistabela.com.br",
     telefone: "(85) 92222-2222",
@@ -112,7 +112,7 @@ const MOCK_CLIENTES: Cliente[] = [
   },
   {
     id: "10",
-    vendedorId: "1",
+    vendedorId: "5",
     nomeRazaoSocial: "Café Gourmet Premium",
     email: "atendimento@cafegourmetpremium.com",
     telefone: "(85) 99876-5432",
@@ -136,7 +136,7 @@ const MOCK_CLIENTES: Cliente[] = [
   },
   {
     id: "12",
-    vendedorId: "1",
+    vendedorId: "5",
     nomeRazaoSocial: "Confeitaria Doce Vida",
     email: "contato@docevida.com.br",
     telefone: "(85) 97654-3210",
@@ -160,7 +160,7 @@ const MOCK_CLIENTES: Cliente[] = [
   },
   {
     id: "14",
-    vendedorId: "1",
+    vendedorId: "5",
     nomeRazaoSocial: "Atacadista BomPreço Ltda",
     email: "vendas@bompreco.com.br",
     telefone: "(85) 95432-1098",

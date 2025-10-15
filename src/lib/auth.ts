@@ -26,6 +26,12 @@ const defaultUsers: User[] = [
     role: "supervisor",
   },
   { id: "4", name: "Ana Costa", email: "ana@3coracoes.com", role: "vendedor" },
+  {
+    id: "5",
+    name: "Paulo Luan",
+    email: "luan@3coracoes.com",
+    role: "vendedor",
+  },
 ];
 
 export function initializeUsers() {

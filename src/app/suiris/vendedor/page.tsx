@@ -92,7 +92,7 @@ export default function VendedorPage() {
                 setEditingMeta(undefined);
                 setDialogOpen(true);
               }}
-              className="bg-primary hover:bg-primary-dark"
+              className="bg-primary hover:bg-primary-dark cursor-pointer"
             >
               <Plus className="mr-2 h-4 w-4" />
               Nova Meta

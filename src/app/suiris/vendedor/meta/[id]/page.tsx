@@ -587,18 +587,18 @@ export default function ControleVisitas() {
             <div className="sticky bottom-0 bg-slate-50 border-t-2 border-slate-200 p-6 rounded-b-2xl mt-auto">
               <div className="flex flex-col sm:flex-row gap-3">
                 <button
-                  onClick={salvarVisita}
-                  disabled={!dataVisita || !resultado || !proximoPasso}
-                  className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-orange-500 to-orange-600  hover:from-orange-600 hover:to-orange-700 transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed rounded-br-lg rounded-tl-lg"
-                >
-                  <Save size={18} />
-                  Salvar Visita
-                </button>
-                <button
                   onClick={fecharModal}
                   className="w-full sm:w-auto flex-1 px-6 py-3 text-sm font-medium text-slate-700 bg-white border-2 border-slate-200 rounded-br-lg rounded-tl-lg hover:bg-slate-100 transition-colors"
                 >
                   Cancelar
+                </button>
+                <button
+                  onClick={salvarVisita}
+                  disabled={!dataVisita || !resultado || !proximoPasso}
+                  className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-orange-500 to-orange-600  hover:from-orange-600 hover:to-orange-700 transition-all shadow-md disabled:opacity-50 disabled:cursor-not-allowed rounded-br-lg rounded-tl-lg cursor-pointer"
+                >
+                  <Save size={18} />
+                  Salvar Visita
                 </button>
               </div>
             </div>

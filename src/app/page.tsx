@@ -90,7 +90,7 @@ export default function LoginPage() {
           </Button>
         </form>
 
-        <div className="mt-6 rounded-lg bg-muted p-4">
+        {/* <div className="mt-6 rounded-lg bg-muted p-4">
           <p className="mb-2 text-sm font-medium text-foreground">
             Usuários de teste:
           </p>
@@ -99,7 +99,7 @@ export default function LoginPage() {
             <li>• maria@3coracoes.com (Vendedor)</li>
             <li>• carlos@3coracoes.com (Supervisor)</li>
           </ul>
-        </div>
+        </div> */}
       </Card>
     </div>
   );

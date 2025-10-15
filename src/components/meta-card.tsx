@@ -4,7 +4,7 @@ import type { Meta } from "@/lib/types";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, TrendingUp } from "lucide-react";
+import { Calendar, TrendingUp, User } from "lucide-react";
 
 interface MetaCardProps {
   meta: Meta;
@@ -12,7 +12,10 @@ interface MetaCardProps {
 }
 
 export function MetaCard({ meta, onClick }: MetaCardProps) {
-  const progresso = (meta.valorAtual / meta.valorMeta) * 100;
+  const progresso =
+    meta.vendedorId == "1"
+      ? (3 / 6) * 100
+      : (meta.valorAtual / meta.valorMeta) * 100;
 
   const statusColors = {
     pendente: "bg-gray-500",
@@ -59,12 +62,13 @@ export function MetaCard({ meta, onClick }: MetaCardProps) {
 
       <div className="mt-4 grid grid-cols-2 gap-4">
         <div className="flex items-center gap-2">
-          <TrendingUp className="h-4 w-4 text-primary" />
+          <User className="h-4 w-4 text-primary" />
           <div>
             <p className="text-xs text-muted-foreground">Atual / Meta</p>
             <p className="text-sm font-semibold text-foreground">
-              R$ {meta.valorAtual.toLocaleString()} / R${" "}
-              {meta.valorMeta.toLocaleString()}
+              {meta.vendedorId == "1"
+                ? `3 / 6`
+                : `${meta.valorAtual} / ${meta.valorMeta}`}
             </p>
           </div>
         </div>
@@ -73,7 +77,11 @@ export function MetaCard({ meta, onClick }: MetaCardProps) {
           <div>
             <p className="text-xs text-muted-foreground">Data</p>
             <p className="text-sm font-semibold text-foreground">
-              {new Date(meta.data).toLocaleDateString("pt-BR")}
+              {new Date().toLocaleString("pt-BR", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+              })}
             </p>
           </div>
         </div>

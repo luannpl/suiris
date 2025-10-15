@@ -34,7 +34,7 @@ export default function ClientesInativos() {
       email: "joao.silva@empresa.com",
       telefone: "(85) 98765-4321",
       totalClientes: 45,
-      clientesInativos: 12,
+      clientesInativos: 4,
       debitoTotal: 28500,
       clientes: [
         {
@@ -73,7 +73,7 @@ export default function ClientesInativos() {
       email: "maria.santos@empresa.com",
       telefone: "(85) 98888-7777",
       totalClientes: 38,
-      clientesInativos: 8,
+      clientesInativos: 4,
       debitoTotal: 15200,
       clientes: [
         {
@@ -112,7 +112,7 @@ export default function ClientesInativos() {
       email: "pedro.oliveira@empresa.com",
       telefone: "(85) 99999-1234",
       totalClientes: 52,
-      clientesInativos: 15,
+      clientesInativos: 4,
       debitoTotal: 42800,
       clientes: [
         {
@@ -151,7 +151,7 @@ export default function ClientesInativos() {
       email: "ana.costa@empresa.com",
       telefone: "(85) 97777-5555",
       totalClientes: 41,
-      clientesInativos: 6,
+      clientesInativos: 3,
       debitoTotal: 9500,
       clientes: [
         {
@@ -197,7 +197,14 @@ export default function ClientesInativos() {
 
   const abrirModalReuniao = (vendedor: any) => {
     setVendedorSelecionado(vendedor);
-    setModalReuniao(true);
+    // setModalReuniao(true);
+    const numero = "5585921644075"; // Exemplo: DDI + DDD + número
+    const mensagem = encodeURIComponent(
+      "Olá! Você foi chamado para participar da reunião vespertina."
+    );
+
+    // Abre o WhatsApp
+    window.open(`https://wa.me/${numero}?text=${mensagem}`, "_blank");
   };
 
   const fecharModal = () => {
@@ -459,7 +466,7 @@ export default function ClientesInativos() {
         )}
       </div>
 
-      {/* Modal de Agendamento */}
+      {/* Modal de Agendamento
       {modalReuniao && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md border-2 border-slate-200">
@@ -536,7 +543,7 @@ export default function ClientesInativos() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
