@@ -89,16 +89,15 @@ export default function LoginPage() {
           </Button>
         </form>
 
-        {/* <div className="mt-6 rounded-lg bg-muted p-4">
+        <div className="mt-6 rounded-lg bg-muted p-4">
           <p className="mb-2 text-sm font-medium text-foreground">
-            Usuários de teste:
+            Usuários de acesso:
           </p>
           <ul className="space-y-1 text-xs text-muted-foreground">
-            <li>• joao@3coracoes.com (Vendedor)</li>
             <li>• maria@3coracoes.com (Vendedor)</li>
             <li>• carlos@3coracoes.com (Supervisor)</li>
           </ul>
-        </div> */}
+        </div>
       </Card>
     </div>
   );
